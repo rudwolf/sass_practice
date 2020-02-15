@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // normalize to 1rem = 10px;
+  font-size: 62.5%;
+}
+
+body {
+  color: $color-grey-dark;
+  padding: 3rem;
+
+  box-sizing: border-box;
+}
