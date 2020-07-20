@@ -3,8 +3,14 @@
     display: none;
   }
 
-  &__checkbox:checked  ~ &__background{
-    transform: scale(80);
+  &__checkbox:checked ~ &__background{
+    transform: scale(30) translate(1.7rem, 0.8rem);
+  }
+
+  @include respond(tab-land) {
+    &__checkbox:checked ~ &__background{
+      transform: scale(80);
+    }
   }
 
   &__checkbox:checked  ~ &__nav{
@@ -30,7 +36,7 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 1500;
 
     width: 0;
@@ -47,17 +53,25 @@
     right: 6.5rem;
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     z-index: 1000;
+    transform: translate(0, 0);
     transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
+    @include respond(tab-land) {
+      transform: none;
+    }
   }
 
   &__list {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(20%,-50%);
     list-style: none;
     text-align: center;
-    width: 100%;
+    width: 50%;
+    @include respond(tab-land) {
+      transform: translate(-50%,-50%);
+      width: 100%;
+    }
   }
 
   &__item {
