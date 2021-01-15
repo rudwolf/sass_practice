@@ -8,6 +8,10 @@
   padding-left: 9rem;
   font-size: $default-font-size;
   transform: skewX(-12deg);
+  // TODO: remove skew on mobile
+  /* @include respond(tab-port) {
+    transform: none;
+  }*/
   transition: transform .3s ease;
 
   &:hover {
