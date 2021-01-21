@@ -8,19 +8,30 @@
   padding-left: 9rem;
   font-size: $default-font-size;
   transform: skewX(-12deg);
-  // TODO: remove skew on mobile
-  /* @include respond(tab-port) {
-    transform: none;
-  }*/
   transition: transform .3s ease;
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    transform: none;
+  }
 
   &:hover {
     transform: skewX(16deg);
     .story__text {
       transform: skewX(-16deg);
+      @include respond(tab-port) {
+        transform: none;
+      }
     }
     .story__shape {
       transform: translateX(-3rem) skewX(-16deg);
+      @include respond(tab-port) {
+        transform: none;
+      }
+    }
+    @include respond(tab-port) {
+      transform: none;
     }
   }
 
@@ -38,6 +49,16 @@
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
+    overflow: hidden;
+
+    @include respond(tab-port) {
+      transform: none;
+      margin-right: 1.5rem;
+    }
+    @include respond(phone) {
+      float: none;
+      margin: 0 auto 2rem auto;
+    }
   }
 
   &__img {
@@ -49,6 +70,9 @@
 
   &__text {
     transform: skewX(12deg);
+    @include respond(tab-port) {
+      transform: none;
+    }
   }
 
   &__caption {

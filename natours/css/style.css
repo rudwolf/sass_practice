@@ -268,6 +268,41 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
+  @media only screen and (max-width: 56.25em) {
+    .card {
+      height: auto;
+      overflow: hidden;
+      border-radius: .8rem;
+      background-color: #fff;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+      .card__side {
+        height: auto;
+        position: relative;
+        box-shadow: none;
+        border-radius: 0; }
+        .card__side--back {
+          transform: rotateY(0deg);
+          -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
+      .card:hover .card__side--front {
+        transform: rotateY(0); }
+      .card__details {
+        padding: 0 3rem; }
+      .card__cta {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+        width: 100%;
+        padding: 4rem;
+        padding-top: 7rem; }
+      .card__price-box {
+        margin-bottom: 3rem; }
+      .card__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase; }
+      .card__price-value {
+        font-size: 6rem; } }
 
 .heading-primary {
   color: #fff;
@@ -403,16 +438,27 @@ body {
   padding-left: 9rem;
   font-size: 1.6rem;
   transform: skewX(-12deg);
-  /* @include respond(tab-port) {
-    transform: none;
-  }*/
   transition: transform .3s ease; }
+  @media only screen and (max-width: 56.25em) {
+    .story {
+      width: 100%;
+      padding: 4rem;
+      transform: none; } }
   .story:hover {
     transform: skewX(16deg); }
     .story:hover .story__text {
       transform: skewX(-16deg); }
+      @media only screen and (max-width: 56.25em) {
+        .story:hover .story__text {
+          transform: none; } }
     .story:hover .story__shape {
       transform: translateX(-3rem) skewX(-16deg); }
+      @media only screen and (max-width: 56.25em) {
+        .story:hover .story__shape {
+          transform: none; } }
+    @media only screen and (max-width: 56.25em) {
+      .story:hover {
+        transform: none; } }
   .story > * {
     transition: transform .3s ease; }
   .story__shape {
@@ -424,7 +470,16 @@ body {
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
+    @media only screen and (max-width: 56.25em) {
+      .story__shape {
+        transform: none;
+        margin-right: 1.5rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .story__shape {
+        float: none;
+        margin: 0 auto 2rem auto; } }
   .story__img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
@@ -432,6 +487,9 @@ body {
     transition: all .5s; }
   .story__text {
     transform: skewX(12deg); }
+    @media only screen and (max-width: 56.25em) {
+      .story__text {
+        transform: none; } }
   .story__caption {
     position: absolute;
     top: 50%;
