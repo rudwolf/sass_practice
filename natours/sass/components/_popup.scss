@@ -14,6 +14,10 @@
     @include absCenter;
 
     width: 75%;
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
     background-color: $color-white;
     box-shadow: 0 2rem 4rem rgba($color-black, .2);
     border-radius: 3px;
@@ -27,6 +31,10 @@
   &__left {
     width: 33.333333%;
     display: table-cell;
+    @include respond(phone) {
+      width: 100%;
+      display: flex;
+    }
   }
 
   &__right {
@@ -34,11 +42,20 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+    @include respond(phone) {
+      width: 100%;
+      display: block;
+      padding: 2rem;
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+    @include respond(phone) {
+      width: 50%;
+      display: table-cell;
+    }
   }
 
   &__text {
@@ -48,6 +65,10 @@
     column-count: 2;
     column-gap: 4rem;
     column-rule: 1px solid $color-grey-light-2;
+    @include respond(phone) {
+      column-count: 1;
+      margin-bottom: 1rem;
+    }
   }
 
   &:target {
