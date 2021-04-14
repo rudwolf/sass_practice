@@ -34,3 +34,8 @@ body {
     margin-bottom: 3rem;
   }
 }
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}

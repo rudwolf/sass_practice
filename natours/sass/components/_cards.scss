@@ -143,8 +143,9 @@
     font-weight: 100;
   }
 
-  // Tablet Portrait Adaptation
-  @include respond(tab-port) {
+  // Tablet and Portrait Mobile Adaptation
+  @media only screen and (max-width: 56.25em),
+    only screen and (hover: none) {
     height: auto;
     overflow: hidden;
     border-radius: .8rem;
